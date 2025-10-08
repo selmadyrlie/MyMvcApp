@@ -6,29 +6,29 @@
 <h2>Create/Edit Character</h2>
 
 <form asp-action="Create" method="post">
-    <div class="avatar-preview" style="position: relative; width: 200px; height: 200px; margin: 2rem auto;">
-        <img src="~/images/base.png" alt="Base" />
-        <img id="hair" src="~/images/hair/@Model.Hair" alt="Hair" />
-        <img id="face" src="~/images/faces/@Model.Face" alt="Face" />
-        <img id="clothing" src="~/images/clothes/@Model.Clothing" alt="Clothing" />
+    <div class="avatar-preview" style="position: relative; width: 400px; height: 400px; margin: 2rem auto;">
+        <img src="~/images/base.png" alt="Base" style="position:absolute; width:100%; height:100%;" />
+        <img id="hair" src="~/images/hair/@Model.Hair" alt="Hair" style="position:absolute; width:100%; height:100%;" />
+        <img id="face" src="~/images/faces/@Model.Face" alt="Face" style="position:absolute; width:100%; height:100%;" />
+        <img id="clothing" src="~/images/clothes/@Model.Clothing" alt="Clothing" style="position:absolute; width:100%; height:100%;" />
         <input type="hidden" id="hairInput" name="Hair" value="@Model.Hair" />
         <input type="hidden" id="faceInput" name="Face" value="@Model.Face" />
         <input type="hidden" id="clothingInput" name="Clothing" value="@Model.Clothing" />
     </div>
 
-    <div class="form-group">
+    <div class="form-group form-group text-center mt-3">
         <label>Hair</label>
         <button type="button" class="prev" data-target="hair">Prev</button>
         <button type="button" class="next" data-target="hair">Next</button>
     </div>
 
-    <div class="form-group">
+    <div class="form-group form-group text-center mt-3">
         <label>Face</label>
         <button type="button" class="prev" data-target="face">Prev</button>
         <button type="button" class="next" data-target="face">Next</button>
     </div>
 
-    <div class="form-group">
+    <div class="form-group form-group text-center mt-3">
         <label>Clothing</label>
         <button type="button" class="prev" data-target="clothing">Prev</button>
         <button type="button" class="next" data-target="clothing">Next</button>
@@ -36,3 +36,8 @@
 
     <button type="submit" class="btn btn-primary">Save Character</button>
 </form>
+
+@section Scripts {
+    <script src="~/js/CharacterCreator.js"></script>
+}
+
