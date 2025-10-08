@@ -1,0 +1,13 @@
+# Ignore build folders
+bin/
+obj/
+
+# Ignore DLLs, PDBs, gz, JSON, and other generated files
+*.dll
+*.pdb
+*.gz
+*.json
+
+# Ignore user-specific files
+*.user
+*.suo
