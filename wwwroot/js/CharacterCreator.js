@@ -1,41 +1,86 @@
-// Character carousel JS
+// Character carousel JS (Dynamic using jQuery + API)
 $(document).ready(function () {
-    // Arrays of image filenames
-    const hairImages = ["hair1.png", "hair2.png"];
-    const faceImages = ["face1.png", "face2.png"];
-    const clothingImages = ["clothing1.png", "clothing2.png"];
+
+    var hairImages = [];
+    var faceImages = [];
+    var clothingImages = [];
+
+    // Load images dynamically from API
+    function loadImages(apiUrl, targetArray, callback) {
+        $.getJSON(apiUrl)
+            .done(function (data) {
+                $.each(data, function (i, item) {
+                    targetArray.push(item);
+                });
+                if (callback) {
+                    callback();
+                }
+            })
+            .fail(function () {
+                console.error("Failed to load images from " + apiUrl);
+            });
+    }
 
     // Change the image for the given category
     function changeImage(target, direction) {
-        const imagesMap = {
+        var imagesMap = {
             hair: hairImages,
             face: faceImages,
             clothing: clothingImages
         };
 
-        const img = $("#" + target);            // the <img> element
-        const input = $("#" + target + "Input"); // the hidden input to submit form
-        let index = imagesMap[target].indexOf(input.val());
+        var $img = $("#" + target);            // the <img> element
+        var $input = $("#" + target + "Input"); // hidden input
+        var images = imagesMap[target];
 
-        if (direction === 'next') {
-            index = (index + 1) % imagesMap[target].length;
-        } else {
-            index = (index - 1 + imagesMap[target].length) % imagesMap[target].length;
+        if (images.length === 0) {
+            return; // No images loaded yet
         }
 
-        // Update the image source and hidden input value
-        img.attr("src", `/images/${target}/${imagesMap[target][index]}`);
-        input.val(imagesMap[target][index]);
+        var currentValue = $input.val();
+        var index = $.inArray(currentValue, images);
+        if (index === -1) index = 0;
+
+        if (direction === "next") {
+            index = (index + 1) % images.length;
+        } else {
+            index = (index - 1 + images.length) % images.length;
+        }
+
+        $img.attr("src", "/images/" + target + "/" + images[index]);
+        $input.val(images[index]);
     }
 
     // Button click handlers
     $(".next").click(function () {
-        const target = $(this).data("target");
+        var target = $(this).data("target");
         changeImage(target, "next");
     });
 
     $(".prev").click(function () {
-        const target = $(this).data("target");
+        var target = $(this).data("target");
         changeImage(target, "prev");
+    });
+
+    // Load all image categories
+    loadImages("/api/hair", hairImages, function () {
+        if (hairImages.length > 0) {
+            $("#hair").attr("src", "/images/hair/" + hairImages[0]);
+            $("#hairInput").val(hairImages[0]);
+        }
+    });
+
+    loadImages("/api/faces", faceImages, function () {
+        if (faceImages.length > 0) {
+            $("#face").attr("src", "/images/faces/" + faceImages[0]);
+            $("#faceInput").val(faceImages[0]);
+        }
+    });
+
+    loadImages("/api/clothes", clothingImages, function () {
+        if (clothingImages.length > 0) {
+            $("#clothing").attr("src", "/images/clothes/" + clothingImages[0]);
+            $("#clothingInput").val(clothingImages[0]);
+        }
     });
 });
