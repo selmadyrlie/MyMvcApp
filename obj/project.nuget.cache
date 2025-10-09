@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PuBycimIMzw=",
+  "dgSpecHash": "0kIUzg1//PM=",
   "success": true,
-  "projectFilePath": "/Users/selmadyrlie/MyMvcApp/MyMvcApp.csproj",
+  "projectFilePath": "/Users/selmadyrlie/Library/CloudStorage/OneDrive-OsloMet/DATA1200/MyMvcApp/MyMvcApp.csproj",
   "expectedPackageFiles": [
     "/Users/selmadyrlie/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/selmadyrlie/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",

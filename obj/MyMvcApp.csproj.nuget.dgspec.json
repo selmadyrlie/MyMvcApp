@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/selmadyrlie/MyMvcApp/MyMvcApp.csproj": {}
+    "/Users/selmadyrlie/Library/CloudStorage/OneDrive-OsloMet/DATA1200/MyMvcApp/MyMvcApp.csproj": {}
   },
   "projects": {
-    "/Users/selmadyrlie/MyMvcApp/MyMvcApp.csproj": {
+    "/Users/selmadyrlie/Library/CloudStorage/OneDrive-OsloMet/DATA1200/MyMvcApp/MyMvcApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/selmadyrlie/MyMvcApp/MyMvcApp.csproj",
+        "projectUniqueName": "/Users/selmadyrlie/Library/CloudStorage/OneDrive-OsloMet/DATA1200/MyMvcApp/MyMvcApp.csproj",
         "projectName": "MyMvcApp",
-        "projectPath": "/Users/selmadyrlie/MyMvcApp/MyMvcApp.csproj",
+        "projectPath": "/Users/selmadyrlie/Library/CloudStorage/OneDrive-OsloMet/DATA1200/MyMvcApp/MyMvcApp.csproj",
         "packagesPath": "/Users/selmadyrlie/.nuget/packages/",
-        "outputPath": "/Users/selmadyrlie/MyMvcApp/obj/",
+        "outputPath": "/Users/selmadyrlie/Library/CloudStorage/OneDrive-OsloMet/DATA1200/MyMvcApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/selmadyrlie/.nuget/NuGet/NuGet.Config"
