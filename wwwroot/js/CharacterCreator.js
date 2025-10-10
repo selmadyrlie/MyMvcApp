@@ -3,7 +3,7 @@ $(document).ready(function () {
     const imagesMap = {
         hair: ["hair1.png", "hair2.png", "hair3.png"],
         face: ["face1.png", "face2.png", "face3.png"],
-        clothing: ["clothing1.png", "clothing.png", "clothing3.png"]
+        clothing: ["clothing1.png", "clothing2.png", "clothing3.png"]
     };
 
     // Folder map to match actual folders
